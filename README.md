@@ -55,10 +55,10 @@ In this step the content of the dataset will be analyzed.
 The amount of data doesn't allow us to use spreadsheets, therefore procced with using the BigQuery. 
 
 ## Combining the data
-The query is available here.
+The query is available [here](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/combining_data.sql).
 All of the data is combined to single table `combined-tripdata`. Amount of records is $5,707,168$.
 ## Exploring the data
-The query is available here.
+The query is available [here](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/exploring_data.sql).
 1. Amount of nulls in the dataset by columns:
 	* `ride_id` - $0$
 	* `rideable_type` - $0$
@@ -84,7 +84,7 @@ The query is available here.
 Following fields need to be cleaned: `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, `end_lat`, `end_lng`. New field `ride_length` will contain values only longer than a minute and less than a day. 
 
 ## Data cleaning and transformation
-The query is available here.
+The query is available [here](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/cleaning_data.sql).
 1. All rows with invalid values (missing values and rides less than a minute or longer than a day) are removed.
 2. Columns `ride_length`, `month` and `day_of_week` are added.
 ### Result of data cleaning and transformation
@@ -95,32 +95,32 @@ To answer given questions we choose to analyze following metrics:
 1. Share of users by rideable type.
 2. Rides per day of week and per hour.
 3. Rides and average ride duration per hour by day of week. 
-The query is available here.
+The query is available [here](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/extracting_data.sql).
 
 # Share
 Data visualization.
 
 ### Share of users by rideable type.
 This viz shows us the preferences of our customers. The absolute majority of Docked Bikes is used by casual customers. For Classic Bikes and Electrics Bikes, the majority is members. This may lead to misunderstanding, that our customers prefer Docked Bikes, when deciding to have a ride. But the absolute values show that amount of these rides is small in comparison to two other rideable types. Casual members make up 35.3% of our annual users.
-![[share of users 1.png]]
+![Share of users](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/plots/share%20of%20users.png)
 
 ### Rides per month
 Following chart shows total amount of rides per month. We can see, that peak of users' activity is April-October. With maximum members' activity in August and casual riders' activity in July. Behavior of both members and casual users is almost the same.
-![[rides per month.png]]
+![rides per month](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/plots/rides%20per%20month.png)
 ### Rides per day of week
 Casual riders make more trips on weekends, while activity of members decreases at holidays.
-![[rides per day of week.png]]
+![rides per day of week](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/plots/rides%20per%20day%20of%20week.png)
 
 ### Rides per hour
 At this chart we can see the peaks of daily activity of our users: from 6:00 to 9:00 AM and 3:00 to 7:00 PM. More rides are being made at this time period, than at the rest of the hours. This leads to needing a deeper analysis. At the following charts we'll provide more exact analysis of customer behavior.
-![[rides per hour overall.png]]
+![rides per hour overall](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/plots/rides%20per%20hour%20overall.png)
 
 ### Rides per hour by day of week
 We'll compare customers' activity at Thursday and Saturday, because peaks of members and casual riders activity happens at these day. 
 Thursday is the day of maximum activity of our members. We see here the usual peaks of activity from 6:00 AM to 9:00 AM and from 3:00 PM to 7:00 PM. And if we add new metric - average ride duration, we'll find a new insight. The average ride duration of casual users at morning is almost the same as members' one. Moreover, average ride duration of members is almost the same throughout the day, but casual riders prefer start their longer journeys at 10:00 AM.
-![[rides per hour thursday.png]]
+![rides per hour thrursday](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/plots/rides%20per%20hour%20thursday.png)
 In comparison, we see almost the same activity of our customers at Saturday. They make almost the same amount of trips each hour but the duration of these trips is still  different. Casual riders use our bikes to make longer journeys, while the rides duration of members stays the same.
-![[rides per hour saturday.png]]
+![rides per hour saturday](https://github.com/cann1neof/google-data-analytics-case-study/blob/main/plots/rides%20per%20hour%20saturday.png)
 ## Summary of observation
 Now we can define differences between casual riders and members. 
 Casual riders:
